@@ -1,0 +1,365 @@
+UE4 Export Helper
+
+Important: Open Source Releases now available. https://github.com/ARTunchained/
+
+Blender 2.80 Upgrade Status:
+
+Update 5: More functions working now, preparation works with collections. 
+
+2.80 is in alpha status. NOT YET FULLY FUNCTIONAL, ONLY BUY IF YOU WANT TO SUPPORT DEVELOPMENT. 
+
+If you find additional issues that aren't listed here yet, please email to me, include as much info and preferable screenshots as possible. Thank you for helping to bring our add-ons to 2.80! 
+
+Ver 0.5 Alpha
+
+Older introduction / tutorial: https://youtu.be/wSSv-NYC0fI
+
+Exporting models for Unreal Engine 4, as well as a lot of other game engines, requires a lot work to do for every model, like applying modifiers, triangulating, splitting or joining your assets, creating a lightmap UV layer and more.
+
+The Unreal Engine 4 Export Helper automates a lot of these steps so you can prepare your model for export in a few clicks. Please watch the demo video for details (note: the demo video was made with the first version of UE4 Export Helper, there are a lot of new features already).
+Designed for, but not only for UE4
+
+Even though this add-on was built for exporting to Unreal Engine 4, most game engines require similar preparation steps - that means even if you are using a different game engine, the UE4 Export Helper can take a lot of work off your hands, work that's prone to human error due to it's repetitive nature.
+
+Right now the UE 4 Export Helper does these steps, most are optional:
+
+    Duplication of your selected objects
+    Applying modifiers for each object
+    Triangulating the objects
+    Creating a lightmap UV layer, ensuring all your lightmap UVs are in proper space from 0 to 1 and don't overlap, optionally snap UVs to lightmap resolution for much better baking results
+    Applying all transformation
+    Centring objects before export
+    Clearing parents the correct way
+    Centring origin to object centre or bottom with adjustable offset for e.g. foliage and trees
+    Converting curve and text objects on the fly
+    Exporting into fbx format with the right settings for UE4, optionally splitting your objects into multiple files, name the files and organize them into a folder
+    Support for adding, managing and exporting collision meshes on the go, supporting all 3 types (Box, Sphere, Convex shape)
+     Check-up of all your objects and scene settings for errors and possible problems
+    LOD Attachement and export (only available with modified FBX exporter script | Beta  Release) 
+    NEW: Inclusion of hierarchical parent / child objects automatically  (Beta Release)
+
+Doing all of that manually for each object, may be noticing on import you forgot one step, doing it again, can easily take up to 30-60 minutes for all objects, leading to frustration and making it a time consuming process. With the UE4 Export Helper it only takes seconds.
+
+The UE4 Export Helper also won't touch your original meshes and only works with temporary copies. That means, inside Blender you can use Blender's full efficiency by working e.g. with modifiers. As the export process is split into 2 steps, you can always do the manual work you need to do in between preparation and export, like unwrapping an object for non-overlapping UVs after an array modifier has been applied.
+More features will come
+
+I've already implemented lots of user requested features, although I'm not able to include every request I'm open to discuss any new feature request.
+
+Note: The UE4 Export Helper is designed for a streamlined workflow for static meshes. UE4EH won't help on exporting armature or animated objects. It also won't help on exporting materials. Converting materials to UE4 may or may not be a feature in a future version, also depending on Epic's development of the importer.
+
+Changelog
+
+0.5.0
+
+Very glad that Emanuel Rumpf joined me on bringing this add-on to 2.8 as well. More details will follow soon. 
+
+Estimated 2.8 compatibility atm: 75%
+
+    GUI 99% working
+    Collections are being used for preparation step (we'll probably move the object to the side as both original and prepared overlap in 3D viewport, but open for suggenstions on how to use collections most efficiently here)
+    Adding collision meshes works
+    Export not yet stable
+
+0.4.2
+
+    Added user requested option "Apply -90° Z Rotation" for a more "humanly" translation of the forward axis
+    Fixed missing preset values
+    Changed the new option as the user actually wanted a +90° rotation
+
+0.4.1
+
+    Added user requested option "Include Connected" for exporting hierarchically connected objects on-the-go (currently only on "Prepare" or "Prepare and Export in one step")
+    Removed Beta Status 
+    Updated export_fbx_bin.py for Blender 2.79 (for LOD-Export)
+
+0.4.0 Beta
+
+    Added support for attachement and export of LOD meshes *
+    Added  modified FBX-exporter to the package*
+    Added article explaining how to modify the exporter script to get LODs working (see documentation below)
+    Added LOD documentation
+    Fixed some issues with LODs
+    Fixed file name bug
+    Fixed undefined variable bug
+    Added option to centre LODs to the main object's coords for a  more convenient  workflow in Blender
+    Added triangulation option in Preparation steps
+    Added reverse LOD order option
+
+*The zip-file now contains Version 0.3.1 stable, Version 0.4.0 Beta and the modified exporter script. 0.4.0  has now been tested in more depth and should be safe to use in most scenarios. 
+
+0.3.1 
+
+    Carefully removed the "beta" attribute
+    Added support for User Local View
+
+0.3.0 beta
+
+    Fixed bug with active object selection
+    Fixed bug with joining objects
+    Added remove option for collision meshes
+    Fixed second collision mesh gets removed if object name contains underscore
+    Added message for user local view. This is not the solution yet, I'm working on it!
+
+0.2.2 beta
+
+    Added dropdown for "Offset bottom origin" to choose from absolute or percentage value
+
+0.2.1 beta
+
+    Added Box and Sphere collision type support
+    Added island scale UI element for lightmapping UVs
+    Fixed bug that in some cases the collision mesh is exported instead of the object
+    Added adjustable "Offset bottom origin" value for e.g foliage that needs to stick a bit into the ground
+
+0.2.0 beta
+
+    Implemented Feedback and warning system (Perform checkup)
+    Check for correct scale
+    Added "alternative Layout" checkbox to the feedback panel to improve visibility with some Blender themes
+    Fixed issues with naming and folder creation
+    Fixed Prepare & Export in one step for objects with collision meshes
+
+0.1.3
+
+    Implemented support for collision meshes (beta)
+    Fixed bug with naming using the "Separate Files" option without the "Only objects' name" option
+    Fixed collision meshes offset incorrectly after export when using "Origin to geometry" or "Origin to bottom"
+    Added explicit name checking for object names in collision list garbage collection (in case you e.g copy an object that already has collisions attached)
+    Fixed "Delete copies" not always deleting the copies of collision meshes
+
+0.1.2
+
+    Added preset system (user request)
+    Added default path option (user request)
+    Added safety method for the "Delete copies" option
+    Fixed installation bug from last upload
+
+0.1.1
+
+    Added option "Only objects' name" (user request)
+    Added option "Delete copies" after export (user request)
+    Added button "Prepare & Export in one Step" (user request)
+
+0.1.0
+
+    Initial Release
+    Added "Centre relative" option
+    Added "Origin To Geometry" option
+    Added "Origin To Bottom of Geometry" option
+    Added Snapping to lightmap resolution option
+    Added conversion of text and curve objects
+    Fixed bug on exporting multiple objects centred
+
+Youtube
+
+First introduction video:
+
+https://youtu.be/jMmHQHtXNcA
+
+Explaining the 0.2.0 features and the different naming conventions in detail:
+
+https://youtu.be/wSSv-NYC0fI
+Documentation
+
+The UE4 Export Helper is a great tool for streamlining the export of static meshes to Unreal Engine 4 and other game engines. It will take a lot of work off of your hands, work that is prone to human error due to it's repetitive nature, making the workflow back and forth between UE4 and Blender a way more smooth process.
+
+Installation
+
+Just download the .zip file somewhere onto your computer, go to Blender's user preferences, click the addons tab and select install from file. Search and select the zipfile and install. 
+
+Since there is now a beta version within the zip file it cannot be installed directly, but has to be unzipped before. Unzip to a location of your choice, go to Blender's user preferences, click the addons tab and select install from file. Search and select the version you want (the .py file) and install.
+
+After that type "ue4" into the search box and activate the addon. Save user preferences afterwards.
+
+Update
+
+If you update UE4 Export Helper from a previous version, please uninstall the old version first, then follow the steps on installation. If the new version doesn't show up, restart Blender.
+
+Modifiy Blender's fbx exporter to work with LODs
+
+https://www.artunchained.de/how-to-modify-blenders-fbx-exporter-for-ue4eh-lod-export/
+
+Usage
+
+If you're familiar with Blender the usage is pretty intuitive. Check out the youtube demonstration for a quick introduction. Most users should be good to go after the ~10 minutes video.
+
+Setting up scale in Blender
+
+In Blender go to Properties->Scene->Units and switch to Metric. The "Scale" value below should be 1.000 by default, if not, set it to one. That's all. Since version 0.2.0 there's also a "Fix it" button in the Check-up dialogue which will do this automatically.
+
+2-step conversion process
+
+The UE4 Export Helper splits the export process into 2 steps. First the preparation and second the actual export. This is intentional, so you can do some manual work in between those steps. For simple objects that don't need another step in between preparation and export, there's now a new button called Prepare & Export in one step.
+
+Example: You've set up some objects using the array and bevel modifiers. You select the object(s) and click on Prepare for UE4. Your objects get cloned to layer 20 and all selected actions on the UE4 Export Helper tab were executed. But after the application of the Bevel modifier, you want to set smoothing for the bevel faces. This can be done now. After you've set up the smoothing in EDIT MODE, select all objects again and click Export FBX for UE4. That's it, you should be done.
+
+General Options
+
+UE4 Collision Meshes
+
+Important note to the collision mesh beta feature: For all operations with collision meshes, be it attaching, preparation or export do not select the collision meshes, only select the actual objects. In an upcoming version, UE4Exporthelper will be able to identify which is the object, and which is the collision mesh, so you won't have to worry about your selection. But for now you have to be careful to only select the actual object and not the collision objects.
+
+Add
+
+Adds the collision mesh, that you selected in the drop down list below, to the current active object. Multiple collision meshes per object are supported and recommend.
+
+After clicking Add your collision mesh will turn to wireframe view, it will be renamed (as the importer of UE4 relies on the naming for identifying the collision meshes) and parented to your object, so you can move your object around or transform it. Attached collision meshes are displayed in a list below the inputs. You cannot edit this list at the moment, but it's garbage collected. That means, if you want to detach a collision object, you can simply delete or rename it in Blender. Next time you add a collision mesh to the same object, prepare it or export it, the list will be updated automatically.
+
+Convex shape
+
+There're currently 3 types off collision mesh types supported by UE4 at import: Box, Sphere and Convex Shape. Inside UE4 there are couple more collision types (like capsule), which cannot be imported at the moment.
+UE4ExportHelper currently supports Convex Shape, Box and Sphere. Create your collision mesh in Blender just as a normal mesh. Remember to keep it as simple as possible, have a closed geometry and keep the shape convex. Make use of the opportunity to have multiple collision meshes, e.g. multiple boxes instead of one complicated mesh. Note: Multiple boxes are of the type Convex Shape, not Box.
+
+Box
+
+The Box type is what it says: a simple box (aka Cube in Blender) with 6 quad faces. As far as I know, the box can be deformed in Object Mode, like scaled on one or two axis. Do not deform the box in Edit Mode, don't move vertices around.
+
+Sphere
+
+The Sphere type is just a sphere, that cannot be deformed at all, rather than being scaled proportionally on all 3 axis at once.
+
+UE4 LOD MESHES
+
+I recommend only to try LODs when you have some basic knowledge how the UE4 collision and LOD system works. LODs are still a Beta feature, if you find any bugs or unexpected results, please leave some feedback.
+
+Activate LOD
+
+LOD export  needs to be activated because it requires a modified fbx exporter script file:
+
+https://www.artunchained.de/how-to-modify-blenders-fbx-exporter-for-ue4eh-lod-export/
+
+Add
+
+Simply select an object you want to attach to your active object (your main object) using the drop-down box on the right. Then click the add button. The LOD mesh will be attached to the object using parenting and custom properties. That means you can continue to work on your main object  and LOD object(s), move them around etc. If you want to detach an LOD mesh, use the minus button next to the object in the LOD list. Please do not attempt to attach or detach LODs manually by parenting them yourself and renaming them. This will not work. 
+
+Export Mesh with LODs
+
+Prepare for UE4 as well as Prepare and Export in one Step  should work fine with LODs  and most options. However, after export the copies on layer 20 cannot be re-used again for another export. You must not skip the preparation step, if you want to export again. Important: Only select the main object(s) for export!
+
+LODs   will be prepared and exported with mostly the same options as the main object, like triangulation and even lightmapping options. Make sure you as an artist also prepare LOD objects the same way you would prepare the main object, UV unwrap it correctly etc. 
+
+LOD positioning
+
+LODs will be exported relative to the main object position. See next option also. For most cases that means LODs should be in the exact same location as the main object before you prepare and export. In the future there'll be an option to center LODs to the main object's position, so you can work more convinient in Blender 
+
+Centre LODs to object
+
+This new option will help you to work easier in Blender with LODs. You can now keep the original object and it's LODs apart from each other, e.g. with different x/y/z location. If you activate this option, each LOD will be positioned to the location of the original object, where it should be in UE4.
+
+LOD order
+
+As it looks to me LODs are exported / imported in the wrong order. This is not the fault of UE4EH but the default behaviour of UE4. That means your first  LOD object will be shown in UE4 from furthest distance. However there will be an option coming soon to reverse the LOD order in UE4EH to make it work more intuitively. 
+
+Reverse LOD order
+
+This new option lets you reverse the LOD order on export for a more human translation of the LOD order from Blender to UE4. E.g. in Blender UE4EH you have this setup:
+
+Main Object
+- LOD 00
+- LOD 01
+- LOD 02
+
+By default LOD 00 would be the object that's shown from the furthest distance, if you come closer it would be LOD 01, then LOD 02 and finally the Main Object. I personally find it more natural to have the order other way round. If Reverse LOD order is activated, LOD 02 would be shown from the furthest distance, then LOD 01, then LOD 00 and finally the Main Object.
+
+LODs  inside UE4
+
+In UE4 you should edit your object to set up the LOD distances. This cannot be set in Blender or exported.
+
+Prepare for UE4
+
+One or multiple selected object(s) will be copied to layer 20 and various functions will be executed. See details below
+
+Triangulate
+
+It's now optional to triangulate (convert quads and n-gons to triangles) your mesh on preparation. Still I highly recommend to leave this on, as it is by default.
+
+Create Lightmap UV layer
+
+To make this function work correctly, it's necessary that all objects got a proper UV unwrap already. This first unwrap can exceed the 0..1 UV space and contain overlaps, as long as those overlaps aren't connected / folded . From this UV unwrap a second UV layer for lightmapping will be created automatically.
+
+Snap UVs to Grid
+
+If you know already your desired lightmapping resolution, you can enter it in the box on the right. The lightmap resolution shouldn't be less than 4 and usually not more than 1024, and always be a power of two (4,8,16,32,64,128,256,512,...). The lightmap UVs will then be aligned to a grid with that resolution. This usually results in a much better lightmapping. Note: Although this will work in 95% of all cases, in some cases the alignment may create overlaps again, so some manual checking afterwards could be a good idea, until you got to know, how it works. Also this creates a temporary image called lightmap_128 (resp. your resolution) without any users, so it shouldn't be saved in your blend file.
+
+Apply Transformation
+
+This will apply the objects rotation and scale. Usually you shouldn't uncheck this to avoid weird rotation and scaling after importing.
+
+Clear Parent
+
+Clears all parent / child relations. Usually you shouldn't uncheck this, even if you're not working with parented objects at the moment.
+
+Join Objects
+
+This will join all selected objects into one after all other actions (like triangulation, application of modifiers etc.) have been done. All materials will be preserved. Use this if you plan to export multiple objects into one object without using the "separate files" option, otherwise you may not get a proper lightmapping UV layout.
+
+Origin To Geometry
+
+If ticked, the origin of the object will be moved to the centre of it's geometry in the preparation process. The object itself won't change location. This is important, if you want to "Centre objects" before exporting, cause actually the origin will be centred. So if you want a correct origin within UE4, you should tick this option or adjust the origin manually.
+
+Origin To Bottom of Geometry
+
+This will putt the origin to the bottom of the geometry. This is very important for objects that should sit on the ground and also be moveable / turnable within UE4, e.g. foliage that you paint in UE4 with a random rotation. Again use it together with the "Centre objects" export option.
+
+With the Offset bottom origin value below you can adjust the origin on the bottom. E.g. for trees or foliage you should set a positive offset between 0.1 and 2 (depending on the size of your object), so your plants will stick into the ground a bit, cause otherwise they may appear floating in UE4, if they are cloned to an uneven ground or have some random rotation. Positive values make objects stick into the ground, negative will make the object float. The value is a distance in regular Blender units, e.g. meters and centimeters, if Blender is set to metric.
+
+Export FBX for UE4
+
+All of your selected objects will now be exported to the .fbx format at once. A file dialog will appear where you enter a file / folder name. It's not necessary to add the extension .fbx to the filename. The FBX exporter settings are fixed right now for the best possible outcome with UE4. In a later version the exporter settings may be adjustable where it makes sense to do so. Depending on the settings explained below, your objects will be split into multiple files or placed into a new folder, among other actions. All existing files will be overwritten automatically without further notice of the user!
+
+Separate Files
+
+Each object will be exported into a separate .fbx file, using the filename you entered above combined with the object name of your object in Blender.
+
+Create Folder
+
+A folder will be created where all separate object files will be placed into.
+
+Only objects' name
+
+When this option is unselected, the standard export process is as following: You press Export or Prepare & Export.., a file dialog appears where you choose a filename and a location on your drive, then the object is named like that:
+Location\Filename_Objectname.fbx
+E.g. Your object in Blender is named "Cube001", you select C:\UE4Exports\ as location and "Building" as filename in the appearing file dialog. The file gets now saved to :
+C:\UE4Exports\Building_Cube001.fbx.
+In case you have selected the "Create Folder" option, files will be saved to :
+C:\UE4Exports\Building\Building_Cube001.fbx
+As the folder creation is designed for exporting multiple objects, this is quite practical.  Assuming we have a building made of multiple parts, named in Blender "Front", "Sidewall" and "Door" then the export will look like this:
+C:\UE4Exports\Building\Building_Front.fbx
+C:\UE4Exports\Building\Building_Sidewall.fbx
+C:\UE4Exports\Building\Building_Door.fbx
+Also consider that inside Unreal Engine 4 you may not have the directory structure present, so can you benefit from the explicit naming convention.
+
+However this may not be the ideal naming convention for every situation. Especially when you want to export single objects "on the fly", you can select this button. The filename entered in the file dialog now won't be added to the filename. Assuming your objects are named as above, the export will look like this, without creating folder:
+C:\UE4Exports\Front.fbx
+C:\UE4Exports\Sidewall.fbx
+C:\UE4Exports\Door.fbx
+With the Create folder option:
+C:\UE4Exports\Building\Front.fbx
+C:\UE4Exports\Building\Sidewall.fbx
+C:\UE4Exports\Building\Door.fbx
+
+Centre Objects
+
+All objects will be centred before export. If you have multiple objects selected and don't save into separate files, the active object will be centred (0/0/0) while all surrounding objects will be moved relatively  too it, so all objects keep their correct positional relation.  If you have multiple objects selected and do save into separate files, each object will be centred on (0/0/0). Both options make sense for different use cases.
+
+If you only have one object to export, you should always check this.
+
+Centre relative
+
+Only relevant when exporting to separate files. If checked, the active object will be centred, while all other objects will be centred relative to the active object
+
+Delete Copies
+
+This will delete the temporary copies created in the preparation step after exporting. If possible, this will also switch your layers back to where you originally have been working.
+
+Prepare & Export in one step
+
+For simple objects that don't need another step in between preparation and export, there's now a new button called "Prepare &amp; Export in one step". You may want to use it along with the "Delete copies" option, as a one-click solution.
+
+Perform Checkup
+
+This button will perform various test on all selected objects as well as your Blender setup and display a dialogue box with useful information. For some possible problems there's also a "Fix it" button which will set things correctly for that particular problem. In a future version there will be more things tested and maybe "Fix it" solutions added, if possible.
+
+Alternative Layout
+
+This checkbox is found on the Perform Checkup results panel. When checked an alternative layout for this panel is used to improve visibility with some themes like the Blender default theme. After activation, please close the Perform Checkup results panel and reopen it to see changes in effect.
