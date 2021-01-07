@@ -1,0 +1,553 @@
+Random Object Array
+
+Important: Open Source Releases now available. 
+
+https://github.com/ARTunchained/
+
+Blender 2.80 Upgrade Status:
+
+I know, things are going slow. I know, it s*cks. Trust me that I liked my fully working, finished products a lot better than the current state. I try everything I can, including paying external devs, to bring my addons to the state they wore before. We're not there yet, but pretty close. If you're a Blender addon dev & interested in working on ROA, UE4EH and my other addons (on a budget) just contact me.
+
+    "To All" (micro add-on) - Tested and working with current 2.80
+    "ROA" - Is compatible with 2.8 for the most parts. Details below
+    "UE4EH" - Check the UE4EH page for more updates
+    "Blender Proxy" - Not working in 2.8, fixing attempts yet unsuccessfull and low in priority (being a freebie).
+
+
+If you find additional issues that aren't listed here yet, please email to me, include as much info and preferable screenshots as possible. Thank you for helping to bring our add-ons to 2.80!
+
+Please DO NOT email me for complaining that "feature X" doesn't yet work with 2.8 - just use a copy of 2.79 if you really need it right now. 
+
+0.8.4 alpha
+
+    More fixes on the "Pick from Group" option, got it partially working, but objects are still linked to the "Pick from Group" - collection (which they shouldn't be). Yet "Pick from Group" works now, in an "alpha" sort-of fashion.
+
+0.8.3 alpha
+
+    Multiple fixes on the "Pick from Group" option, yet it will need more changes to make it work (if you test it you'll see). This will take more time but is also a chance to make ROA incorporate Collections better.
+
+
+0.8.2
+
+    Fixed AABB-Collision Detection not working in 2.8
+
+
+0.8.1 release (a little bit beta still)
+
+Fixed for 2.8 - huge shoutout & thanks to Emanuel Rumpf for contributing the fixes and providing a running 2.8 version of ROA. This means a giant step forward in the whole process, Emanuel managed to solve the biggest issues with 2.8-compatibility, I'm very positive that we'll get 95%-100% of previous functions to work again.
+
+I've just started testing what works and what not. Most functions work exactly as before (and with even higher performance), with the exceptions below.
+
+    "Mirror" non-functional
+    "Target Mesh" non-functional
+    Pick From Group not working
+
+
+Will be testing further and see what we can fix asap. If you find issues not listed here, please provide feedback.
+
+0.7.7 release
+(Feature  image was made entirely with ROA 0.7.7 and Blender Proxy.  10.000 Objects, 30 Mio Polygons)
+
+Random Object Array has been heavily developed in the past years. It has become a very versatile and stable tool, not only as an “array modifier replacement with random options”, but as an add-on for everyday use when it comes to working with instances. Together with Blender Proxy, Random Object Array will help you to exceed the current limits of both your GPU memory as well as Blender’s viewport. I also strive to make both scripts as user friendly and non-destructive as possible. Random Object Array by now has lots of options, not all of them are presented here on this product page. Take your time before you buy, watch my videos or read the (yet incomplete) documentation. If you’re unsure about an option, feel free to ask in the comments.
+Introduction
+
+Years ago I proposed on Blenderstorm to add random values to the array modifier. It never happened. I was tired of tweaking a particle system for an hour, just to realise that the desired result cannot be made that way. That’s the reason I created the Random Object Array add-on. Random Object Array allows you to create all kinds of object arrays that need some randomization like plants, roof tiles, cobblestone, walls, etc. using a very quick workflow without having to use a particle system. And there’s even more.
+Intuitive Workflow
+
+It is not a modifier, but it offers an intuitive and fast workflow to distribute objects with random offset, rotation and scale, within seconds. Values like offset or rotation represent what you as an artist would think they do. It works like up to 3 Blender Array Modifiers chained together, meaning it can created duplicates in up to 3 dimensions. It has lots of useful option that are mostly self-explanatory. Have a look into the documentation or the feature video to see all options explained.
+More Control
+
+Whenever someone asked “random” in Blender the answer was always “particle system”. That’s not because the particle system was made for every “random” situation, but because it was the only option. A particle system is great for hair, particles, fur, even grass. But it can become an obstacle for other purposes. Compared to a particle system, the Random Object Array add-on offers much more control over random values like rotation, position, scale. It’s fast and stable for all kinds of objects, not only meshes but also lamps, cameras and group instances. The values aim to represent what you are used to, opposed to the rather obscure values of a particle system. Forget about what “brownian” does or if your “size” value should be either 0.001 or 0.002.
+Clone on Meshes
+
+One of the great features is the ability to clone your objects to a mesh’s faces. Again the use cases are mostly self-explanatory: Use the “Target Mesh” option to distribute plants on a terrain, needles or leaves on a branch or tiles on a space ship. New! ROA can now also clone to the points of a faceless mesh, like a converted curve.
+Free updates
+
+If you buy Random Object Array on cgcookiemarkets.com you will receive every update of this addon for free.
+Lots of Features
+
+ROA has become quite a deep tool, the list of features includes:
+
+    loading / saving per object
+
+    realtime preview, autoload & autosave - modifier like behaviour of the Add-on
+
+    randomized shape keys. new: objects with shape keys can now be joined into a single mesh
+
+    cloning as instances, real copies or single mesh
+
+    constant and random offset and rotation, random scale
+
+    cumulate rotation and scale
+
+    target mesh mode, clone to faces, points or with a curve modifier
+
+    grid mode
+
+    relative (per object scale) offset
+
+    3 collision detection modes
+
+    picking source objects from a group with adjustable count for each group object
+    new: Row offset for grid mode
+    new: Fully controllable stepwise rotation
+
+See more features in the documentation, the videos and the changelog.
+Videos
+
+Currently I’m recording the “ROA Complete tutorial”, you will find all parts here or on my youtube channel:
+
+Part 1: http://youtu.be/ugaEllRttAk
+
+Part one is a generic introduction, talking about the most basic things in ROA
+
+Part 2: http://youtu.be/rTUSH4v7BU4
+
+In part two we will work with group instaces, target meshes and find a way not to run into the object count limit too quickly
+
+Part 3: http://youtu.be/Vc8-H9y3k5U
+
+In part three we will have a look at relative offset, picking from group, AABB collision, some prerequisits and also talk about the limits of ROA
+
+See more parts in the documentation!
+Now bundled with Blender Proxy
+
+Blender Proxy is an open source add-on I’m currently developing. It’s the perfect addition to Random Object Array and helps you with instanciating lowpoly to highpoly objects for a super fast workflow in the viewport while rendering literally billions of polygons in Cycles. Blender Proxy comes now bundled with Random Object Array.
+
+ROA 'Random Object Array' Documentation
+Development
+
+Notes:
+
+    ROA was successfully tested with Blender 2.79 without any issues
+    The current 0.7.7 release is a pure "re-label" release of the former 0.7.7 beta. As no issues have been exported for month no changes to the code have been made
+    The last Planed Features that have been hovering around for quite a while now have been removed from the list. I could not find a way to implement these with a reasonable amount of work. As announced on the product front page ROA will be on "Feature Freeze" from now on. 
+
+
+Known Bugs:
+
+Experimental anim mode broken
+
+ 
+
+Please check the changelog and the "known issues" section at the end of this document, as most bugs don't make their way up til here, but get fixed right away when found.
+
+Videos
+
+Currently I'm recording the "ROA Complete tutorial", you will find all parts here or on my youtube channel:
+
+Part 1: http://youtu.be/ugaEllRttAk
+
+Part one is a generic introduction, talking about the most basic things in ROA
+
+Part 2: http://youtu.be/rTUSH4v7BU4
+
+In part two we will work with group instaces, target meshes and find a way not to run into the object count limit too quickly
+
+Part 3: http://youtu.be/Vc8-H9y3k5U
+
+In part three we will have a look at relative offset, picking from group, AABB collision, some prerequisits and also talk about the limits of ROA
+
+Part 4: http://youtu.be/u3lC-zsPdSo
+
+In part 4 we will use all the things we've learned and make a borg cube
+
+Part 5: http://youtu.be/QBiQGiuuA0I
+
+0.7.2 development version update: Interface cleanup, changed default option, Single object / instances / real copies choise box
+
+Part 6: http://youtu.be/Or7ZS3o09Sk
+
+Another development update: (Fixed) seeded random and the experimental anim mode
+
+Part 7: http://youtu.be/rxqOxJ7jklM
+
+Part 7 with more news: Local offset for the target mesh mode and shape keys
+
+Part 8: http://youtu.be/_GDeWXLP9EQ
+
+Again more of a news flash than a real tutorial, but still some important topics for all ROA users.
+
+Part 9: http://youtu.be/dsRL7wrSPJc
+
+In this part I show how to clone to points and directly to a bezier curve, using the curve modifier
+
+ROA 0.7.5 for Blender 2.76 update: http://youtu.be/lhF9d51HQyE
+
+Part 10: https://youtu.be/9MIzU0SCsbA
+
+Release of 0.7.5 demonstrating the autosave / autoload feature and some performance tipps.
+
+ 
+Manual
+
+Introduction Thanks for buying the Random Object Array addon for Blender. This addon was created to offer an intuitive workflow for distributing objects randomly without having to deal with a particle system. The basic behavior was adopted from the Blender Modifier “Array” to get intermediate Blender users started quickly. However, this addon is not a modifier and so it doesn't work in real time like the Blender modifiers. But if you read this documentation to the end you'll hopefully find the workflow of Random Object Array (ab. ROA) is intuitive and also a fast way to distribute objects randomly without much hassle.
+
+Prerequisits This addon was created for Blender 2.70 (official release) and above. Older versions of Blender are not officialy supported. I strongly recommend to use it with Blender 2.76 and above, as the realtime performance is much better. Also there may come more features depending on 2.76.
+1. Installation
+
+1.1 First installation 
+
+The addon is installed a bit different than usual.
+
+After downloading the .zip file, please unzip it to your prefered location. ROA is being constantly developed and there are some additional addons within the package, that why the zip file will contain two or more folders and update information. 
+
+In Blender go to File → User Preferences and then click on the Addons tab. On the bottom of the window click the Install from File... button. Navigate to the location you extracted the files before. Locate randomobjectarray.py in a subfolder, select it and click Install from file. Back in the User Preferences Window Random Object Array should now appear in the list on the right. If not, please type in “random object” into the search bar on the top left of the window. Check the checkbox next to Random Object Array and next click on the Save User Settings button. If you find something is not working at any step of this process please contact the support.
+
+Please restart Blender after installing / reinstalling, if you experience the add-on behaving strangly or slower than usual. 
+
+1.2 Update / Reinstallation When updating ROA with a new version, please go first to File → User Preferences → Addons. Type in “random object” into the search bar on the top left of the window. Expand the Addon tab by clicking the rightwards triangle and click on the (x)Remove button. Restart Blender, then follow the instructions at 1.1.
+2. Usage
+
+There are two different modes ROA can work in. The standard mode (including the Target Mesh mode) and the grid mode.
+The standard mode works very similar to Blenders Array Modifier, while the grid mode will offer more advanced options and works like using multiple Blender Array Modifiers at once.
+Since version 0.7.1 you shouldn't have to worry about your original object's scale, rotation or location in general, with those exceptions: Using a target mesh, the relative offset or picking objects from a group.  Using a target mesh make sure the target mesh has a scale of 1/1/1 (CTRL+A -> Apply scale). Using the relative offset make sure your origrinal object has a scale of 1/1/1. Using a group as source make sure  your orgininal object and all group objects have a scale of 1/1/1.  The actuall dimensions of the object(s) don't matter in all cases.
+For objects standing on the ground like plants I also recommend that you place the origin of the object to the bottom of the geometry. As ROA uses the objects origin for rotation and other operations, you can adjust the location  of the origin depending on your needs to achieve different results.
+Select a single object (object, group instance, lamp, etc.), enter your settings in the ROA dialog and hit apply. That's all. Below all settings are explained.
+Tip: Almost all options have useful tooltips, just hover the mouse over an option in ROA to see a short explanation of what this option does!
+
+2.0 General options
+
+Realtime checkbox and Assign ROA button: If you want to use the realtime preview option, select your object and press the "Assign ROA" button. This setting is now saved to the object and will be saved with the blend file. Then tick the "Realtime" checkbox and adjust your settings. Realtime mode will show only up to 512 objects (or in grid mode up to 8x8x8 objects) with all modifiers disabled to make sure the working speed is ok. You can of course enter a higher number of objects, once you hit the Apply button, this number will be generated, with all modifiers enabled again. Please note that the target mesh mode can be a bit less responsive in realtime. Also some operations that require a longer time to execute (e.g. Single object, Avoid intersections) won't be shown in realtime. Again, once you hit Apply those operations will get executed.
+With some exceptions all options and values trigger a realtime update. If an option, e.g. new or beta feature, doesn't (yet) trigger the realtime update, you can just increase/decrease e.g. the count by one to trigger the realtime update.
+
+Autosave checkbox - if enabled, ROA will automatically load and save every change you made, for each object, imitating the behaviour of a real modifier.
+
+Keep children Working with parenting is the new gold standard of ROA (thanks to user Darek for requesting this initially). If your object already has children, you should keep this box checked, otherwise they will get deleted using the realtime preview or when hitting Apply. Children won't be replicated. If your object doesn't have children other than created by ROA and you also use the parenting option, you can uncheck this box to experience a more "modifier like" behaviour. (E.g. you then don't have to manually delete previously created objects but can just turn on Realtime again or change settings and hit Apply again). If your objects has already a lot of children you want to keep, this may slow down the realtime preview.
+
+Reset all values Resets all values to default. Doesn't reset anything you created and also doesn't yet update the realtime preview.
+
+Save to object / Load from object Saves all ROA settings to the object, respectively loads the settings from the object to the ROA user interface panel. Settings saved to an object will be saved with your blend file. As usual you have to save you blend file after saving the settings to an object.
+
+2.1 Standard mode options
+
+Count The number of objects you want to create
+
+2.2 Grid mode options
+
+Number of Objects X / Y / Z The number of objects for every axis. E.g. you set the X: to 10 and the Y: to 5. This will create 50 objects in an array of 10 by 5 like on a plane. Please be careful when using 2 or 3 dimensions as the number of objects will rise quickly (10x10x10 = 1000).
+
+3. General options
+
+Copy type drop down
+Single object Only works for mesh or curve objects. If activated the result will be joined to one object. Managing hundreds of objects in the viewport is not very comfortable and may also slow down Blender. No matter if Single object is on or off, your original object will remain untouched and not be joined into the array. This is a feature, not a bug. If you want to create  more than  4000 objects consider splitting your work into smaller parts by using Single object to create a subsection of objects that you replicate again as instances.
+Instances Objects are created as instances, also known as linked duplicates (ALT + D)
+Real Copies Objects are created as real copies, also known as duplicates (SHIFT + D)
+
+Grid Mode Toggles between the standard mode and the grid mode. Grid mode is generally the better option to distribute objects more even and avoid intersections. All objects are distributed on a grid, then random offset values are added / subtracted. It's also the only option to really distribute objects over 2D or 3D space, although you may achieve similar effects working in standard (= one dimensional) mode using random offset values.  Grid mode works like using multiple Blender Array Modifiers together, while standard mode works like a single Array Modifier.
+While grid mode probably is the best option to distribute plants on a flat surface, standard mode may work great for creating a book shelf with random sized books.
+
+Fixed Offset X / Y / Z
+
+Standard Mode The object offset similar to the constant offset in Blenders Array modifier. Can be left at zero when working with Random Offset.
+
+Grid Mode In grid mode these values are mandatory, as they define the grid size. When you create a grid with X: 10 objects and Y: 5 objects the fixed offset will define the space between the single objects and therefor the size of the whole array. Leaving them at 0 would result in all your objects being created at 0 / 0 / 0 and only be offset by the random values, disabling the advantage of the grid. Random Offset X / Y / Z The random object offset.
+
+Cumulate Offset This option has been removed as it didn't have a functionallity. It's been replaced by the next option.
+
+Relative Offset The realtive offset between the objects. Only works on one axis. When activated a drop-down menu will appear below the Count. Choose your axis to use for the relative offset. For the relative offset the scale of the original object should be at 1, at least for the axis you chose as relative offset. Here's a video explaining the option further: https://www.youtube.com/watch?v=oZczTkg2QZM
+
+Range + / - When turned on the values n of Random Offset X / Y / Z will be calculated from -n to n instead of 0 to n. E.g. Random offset X: 5, the random values will be between -5 and +5. When Range + / - is turned off, the values would be between 0 and 5.
+
+Fixed Rotation X / Y / Z  The object rotation (global)
+
+Random Rotation X / Y / Z The random object rotation (global). Right now the rotation is always in a + / - style. That means a rotation set to Z: 20° will be randomly between -20° and +20°. In a future version this will be optional. Rotations can be combined. A good result distributing a plant for example would be achieved setting the Y to 15° and Z to 360°.
+
+Cumulate Rotation If activated the behaviour is similar to Blenders Array Modifier using an offset object that is turned around one or more axes. E.g. Cumulate Rotation is turned on and Fixed Rotation is set to X: 10°. The first duplicate will be turned 10°, the second 20° and so on. If turned off, the rotation will be constant for every duplicate. This for example can be useful when creating overlapping roof tiles that are all rotated 10° around the Y axis.
+
+Full Angles If activated the random rotation will always be either 0° or +n°/-n°. E.g. Full Angles is turned on and Random Rotation Z is set to 90 degrees. The duplicates will now randomly be turned exactly 90° or not turned at all. This can come in handy in various situations like distributing houses.
+
+Step Rotation If activated a new set of numbers will appear, Step Rotation Min (X/Y/Z), Step Rotation Max (X/Y/Z), Step Rotation step size (X/Y/Z), which allow an independent stepwise rotation for each axis. E.g. you want each object rotated 20° around the x-axis up to a maximum of 180°, then start from the beginning, enter 0 at Step Rotation Min X, 180 on Step Rotation Max X and 20 on Step Rotation step size X. To keep your sanity you should only use positive numbers, although negative numbers work, too.
+
+Random Scale Minimum / Maximum (X / Y / Z) Duplicates will be scaled randomly between min and max value. If Keep Shape is deselected you can enter individual values for X, Y and Z. Keep Shape If turned on, Duplicates will be scaled proportionaly. If turned off, additional values for X / Y / Z can be entered.
+
+New Features
+
+Parent Objects Instances are parented to the original object. When working with curves, it's strongly recommended that you disable "Path animation" under the curve data tab, otherwise the parenting and offset of the curve's clones will not be correct.
+
+Avoid intersections Collision based method of avoiding intersecting objects. Use "Max. collisons" to have objects removed, that have at least this number of intersections with other objects. For collision mode there are three modes available. The so called axis alligned bounding box collision detection tries to find objects where the (in Blender slang) applied rotation bounding boxes of the objects collide. It is a fast method that doesn't have a 100% precision but it's pretty good for everyday use.
+The "Solving method" drop-down offers you several options (Delete, Move, Scale and Select) on what to do with the result and is mostly self-explanatory. Also the hovering tooltip explains what each method does in detail..When using the "Avoid intersections" option and the "delete" method you may wonder why so little objects are left over sometimes. This is usually because you tried to create too many objects on too little space. The result is, that most of them get removed, because they are all colliding. If that happens I recommend you apply your setttings with "Select" method onse, to see if there's enough space. Another problem you may run into is using random scale greater than ~1.5. If there are very big duplicates in your field of objects, they cause a high number of intersections with other objects, and once removed by the AABB algorithm, they leave a big empty where they were created before.
+Even though the method is quite fast it takes a notable amount of time to check all objects for collision. That why you shouldn't use "Remove intersecting" on more than 1000 instances. Please keep in mind, too, that combining different options add in execution time, so if you for example use "Remove intersecting" together with "Single object", it will take more time than using only one of those options at once. The newly added "Simplified" and "Origin distance" modes are more unprecise but work faster and so support up to 4000 duplicates. Enter the minimum distance (in Blender units) between 2 objects origins to define them as colliding. E.g.: For the standard cube without rotation enter a value of 2, so touching cubes would be detected. Works best on uniform objects (cubic, spherical, not strechted out on one axis) in 3-dimensional mode, resp. square-like objects (tree, high building, etc) in 2-dimensional mode.
+The AABB mode doesn't work for group instances and maybe other non-mesh type objects, as Blender doesn't have proper bounding box dimensions for those objects (even though the bounding box is shown in the viewport). Use one of the other modes for those types of objects.
+
+Pick from group Select a group of objects in the box below to use these group objects as clone source. As with this new feature some old limitations came in again: Please make sure that every object of the group has an applied scale resp. a scale of 1/1/1, otherwise the outcome may be weird. Note: Using modifiers on group objects together with "Single object" is unsupported. There won't be an error, but the joined mesh won't have any modifiers on it. This problem can't be solved as every object can have different modifiers with different values. It is not possible to mix these modifiers into one object. However, modifiers on group objects are supported if you're not using the "Single object" mode.
+
+Load group list button - if you work for the first time with a group, or changed the group, use this button to load the list of group objects into ROA. Then you can adjust the count value of each group member, including the master object. Working with the group list in realtime may not always update the realtime preview correctly, and may also save the last value adjusted wrong using autosave - for now use the manual "Save" button as well as "Apply".
+
+Count sets the count for each group object, so the probability for the object to be picked over the other objects. Only works, if ROA is assigned to the master object, the group list is loaded and ROA is in edit mode. Note: there's a small bug with ROA and Blender's user interface which sometimes doesn't update the count in the list correctly while you drag the count slider. As a workaround please drag the slider further than your actual value and the dial it back to the actual number.
+
+Avoid Repetition only works for 1-dimensional arrays. If checked, ROA will try to avoid the repetition of group objects, so there's never "object A" next to "object A". This overrules the count. Setting a count still works, but the "don't repeat" - rule will be more important, mathematically this makes the count incorrect, practically it should still work as expected.
+
+Shape key checkbox- if enable, ROA will randomize the first shape key (not the basis!) of each copy. This doesn't work with instances, as all instances share the same shape key setting. All source objects should containt exactly 2 shape keys, the basis and a key. If you want to use random shape keys with the "Single object" mode, see below.
+
+Apply Shape key checkbox - this will apply the random shape key to each copy, allowing you to join your objects, keeping the random shape key. With this feature enabled, shape keys work now in the "Single object" mode, too
+
+Row Offset If enabled, an additional set of x/y/z values will appear that allows you to add an another offset for every new row. Use the same axis dropdown selector as for relative offset to choose an axis. With the row offset you can easily make things like stairs. Work in grid mode only.
+
+Target Mesh allows you to clone to a mesh. Weightmaps / Vertex Groups are supported for density and scale.
+
+Blender Proxy Documentation
+
+1. Installation
+
+The installation process is the same as with ROA. Please unzip blenderproxy.py to your prefered location. From here on, follow the installation / update instructions of the ROA documentation.
+
+2. Usage
+
+Introduction
+
+Blender Proxy is an add-on that helps speeding up Blender's viewport when working with a large number of objects, a high polygon count or a combination of both. Depending on your hardware, the limits of the viewport are at around 8.000 objects (independent of polygon count) and 5-20 million polygons (independent of object count). When reaching those limits, the viewport starts to slow down, even a mouse click on a menu button can take up to two seconds, which I refer to as “being unusable”. Those limits however are waaayyy below the limits of Blender's Render engines, meaning you could render far more objects or polygons, if the viewport wasn't in the way. You probably know that from working with the particle system. One of Blender's core developers, Sergey Sharybin, recently wrote a paper explaining more into depth, why things are the way they are, but simplified it's like that: “Whatever you want Cycles to render must be in the viewport somehow.”
+
+This is where Blender Proxy comes into play. It's using methods built-in in Blender to help you working your way around those viewport limits, basically by switching objects and instance groups. You will work with low poly objects respectively “low object count” versions in the viewport, being able to navigate fast, position everything exactly and so on, and only for rendering your objects get exchanged. Right now Blender proxy only works with groups. There've been experiments with instancing real objects, but the exchange process was too slow. However, this may still be implemented in the future.
+
+Example usage
+
+Instancing a high number of objects
+
+In this example we will use Blender Proxy to deal with a high number of objects. Create a large number of objects with ROA, lets say 1000. Also add a single cube, position and scale it so it fits the boundaries of your 1000 objects. This big cube will be our lowpoly instance. Hide the cube temporarily by pressing “H”. Next press “T” to open the left sidebar. Select all objects and hit “CTRL+G” to add them to a new group. On the bottom of the left sidebar you can optionally enter a name for this group. With all objects selected, press “M” and click on layer 20 to move the objects there. Switch back to layer one, press “ALT+H” to unhide your big cube. Open Blender Proxy under the Display Tools tab. Select the group you've made in the dialog of Blender Proxy (in the middle under the “link” category), select the big cube and click on “Create highpoly link”.
+
+You can now position, rotate, scale, duplicate or do whatever you want with the cube. Maybe replicate it with ROA 100 times just for some fun. Position your camera, lighting etc. and when you want to render the scene, click on “Prepare Render”. Now Cycles won't render 100 big cubes, but 100*1000 objects. Great! After rendering, don't click “Cleanup (after render)” immediately, but go to a 3D viewport and see, how it's responding. Change the draw mode to “Solid” and try to rotate the view. You will notice, it has probably become unusably slow. So go ahead now and click “Cleanup (after render)”, things are fast again. Congratulations, you've just done something, that hasn't been possible before, at least not that easy.
+
+Make lowpoly & link This button will automate parts of the process described above. However, a script can never replace human intelligence. Let's do the example from above again, create 1000 objects with ROA. Select them all. Under the “Make lowpoly & link” button there should be the option “decimate modifier” selected, with a number of 0.005 below. Assuming we will only address the problem of a high object number and don't want to reduce the polygon count, change this value from 0.005 to 1. Then click the button. The process may take some time, it will:
+
+    create copies of the 1000 objects
+    join them together
+    add the original objects to a new group and automatically name it
+    also set the group offset
+    link the joined mesh to the group
+
+and finally move the original objects to layer 20
+
+You can always switch to layer 20 to edit your original objects afterwards, you can also move them to other layers. But as group instances have an offset, you shouldn't move your original objects in 3D space, otherwise you would have to do repeat the above process again, or correct the group offset manually.
+
+Instancing highpoly objects
+
+The process is the same, but this time you would use either the “Decimate modifier” or the “Polygon cloud” method to reduce the number of polygons. The presets should work pretty well for highpoly objects. To have more control you can tick the “decimate each object” box, but only do that for a small number of objects, otherwise it will take forever. The decimate modifier method works exactly as Blenders Decimate modifier (surprise), so you can experiment with the modifier to get a feeling for the values. The Polygon cloud method simply chooses the entered number of polygons randomly, again for each object or for the combined objects depending on the “decimate each object” switch.
+
+Prepare Render and Cleanup (after Render) This is where the magic happens. Before rendering, either in the viewport or with F12, click the "Prepare Render" button. You lowpoly objects will now get interchanged with the highpoly version. To speed up this process, all 3D viewports will be set to bounding box. When you are finished with rendering click the "Cleanup" button and the process will be reversed. Check out the new "Auto" switch!
+
+Auto The new "Auto" checkbox will now convert things for you automatically back and forth when rendering (F12 render only, this won't work for the viewport render). However, if the conversion, meaning the "Prepare render" takes some time, this will fail, as Blender doesn't wait for the script to finish it's job, but will start rendering anyway. Then only some of the objects will be converted. When working with Blender Proxy on a forest scene lately, I came nowhere close to this problem. I did however run into this problem when I created my 1 million random spheres image, because the conversion took about 28 seconds.
+
+General tips for Blender Proxy
+
+Using the automated lowpoly generation may not always be the best solution. Lets take a tree with 100.000s of leaves for example, the generated object would still have lots of polygons while vaguely representing the tree visually. A fast & better way would be to just duplicate the stamp and branches in edit mode and separate them into a new object, resulting in a very clean lowpoly version of the tree. In other cases it may be better to just use primitive objects or apply a decimate modifier manually. Take into consideration that those manual processes can be done in seconds, while playing with an automated generation may end in using a lot more time without getting a proper result.
+You then can always use the “make lowpoly & link” button and set the decimate modifier value to 1, meaning your object will not be decimated. In the future there will also be an option in the dropdown to not decimate the object.
+
+I've noticed that Blender's viewport doesn't seem to like loose points, edges or polygons, at least if there's a lot of them, and can respond with a crash. Try to aim for solid objects in general.
+
+Experiencing "wrong size" of the proxy object this usually happens only for one reason - one or more source objects are initially parented to another object, which has a non-applied scale (scale different to 1/1/1). Blender proxy can not fix this for you, cause it would mean to destructively either unparent the objects or apply the scale to the other object - this is your task to check and do.
+
+Known Limitations & Tricks of Random Object Array
+
+    Too many objects or objects with high polycount can lead to long calculation time and eventually freeze Blender. Start with low object counts / low polygon count to see how your system is responding. The addon has been succesfully tested for up to 20 million polygons and 8000 objects on a CoreI7 with 8GB Ram. Those limitations are the usual limitations of Blender itself.
+    When getting to know the addon, don't squeeze values to extremes. Get to know what values / switches do by experimenting with low values and simple objects
+    Using "Single Object" in the local user view (numpad "/" key) doesn't work. Please leave the user local view before using this feature
+    Realtime preview object count is limited to 512 objects (8/8/8 in grid mode). Maximum count may increase on further speed optimizations
+    If you aim to create a very high number of objects, try creating chunks consisting of a smaller amount of objects using the "Single object" feature. Then replicate those chunks again, or...
+    Use it together with Blender Proxy! Simple as that. ;)
+    ROA can be combined with all modifiers
+    If you want to save render memory with ROA instances, apply all modifiers that create geometry (subsurf, bevel, etc.) to the original object first. Then replicate that object.
+    Since version 0.7.1 you shouldn't have to worry about your original object's scale, rotation or location in general, with those exceptions: Using a target mesh, the relative offset or picking objects from a group.  Using a target mesh make sure the target mesh has a scale of 1/1/1 (CTRL+A -> Apply scale). Using the relative offset make sure your origrinal object has a scale of 1/1/1. Using a group as source make sure  your orgininal object and all group objects have a scale of 1/1/1.  The actuall dimensions of the object(s) don't matter in all cases.
+    User interface slowdown issue: If you have thousands of objects in the scene and have a "Target mesh" set in ROA, it becomes laggy. I assume the reason for this is Blender constantly checks if that target mesh still exists on every event (like moving the mouse). Sadly there's no other solution right now than clearing the target mesh field by pressing the (X) next to the target mesh name.
+
+Report a bug  You can report bugs here or to [email protected]Include as much information as possible, Blender version, an attached .blend file, Operating System etc. Please use this address only for bug reports. Feature or support request to this address will be ignored.
+Changelog
+Random Object Array
+
+Version 0.8.1 / Blender 2.8 release
+Most of the 2.8 - port and fixes were provided by  Emanuel Rumpf. Big thanks for his engagement!
+
+Known isssues
+
+    "Mirror" non-functional
+    "Target Mesh" non-functional
+
+
+Version 0.7.7 release
+
+    Removed entry "Make ROA's clones unselectable (optional)" from requested features list - this cannot be done with ROA right now due to the way objects are recycled, recreated etc.. For additional info please visit the support forum
+    Added feature Full Angle Random Rotation for selectable axis
+    Added feature displaying target mesh polygon count
+    Added Property Group for ROA's properties so they don't get in the way in the outliner for other Python developers
+    Fixed couple of wrong properties from previous upload
+    Fixed "Pick from group" not working any more
+    Fixed bug when hitting "Apply" with some cases of the new realtime mode (typo from the new property group)
+    Reworked the user interface regarding "Realtime": replaced Checkbox with toggleable button.
+    Moved the Apply button to the top, cause quite a few users overlooked it
+    Moved some less important options to the bottom of the user interface
+    Added button to select the parent of an ROA-array-child, to be able to edit the array without searching for the parent
+    Fixed bug within the "select parent" function
+    Implemented option "Avoid repetition" for "Pick from group" - arrays
+    Added experimental feature "Row offset"
+    Fixed new bug "Resetting values turns off autosave"
+    Fully implemented "Row offset" with selectable axis
+    Fixed "Full Angle" Axis selection not updating realtime and not saved / loaded properly
+    Implemented Stepwise Rotation
+    Implemented Mirroring
+    Fixed bug with "Single Object" mode
+
+ 
+
+Version 0.7.6 release
+
+    Fixed bug where object data was copied instead of being recycled, thus slowing down realtime preview
+
+ 
+
+Version 0.7.6 beta
+
+    First implementation of pick-from-group count, still a bit buggy
+    Updated pick-from-group count, should be working pretty stable now. Note: The group count loading / saving isn't compatible with the last 0.7.6 beta, but should work fine with saves from previous versions. Group count autosaving may save the last value you adjusted wrong, use the save button to be sure.
+    Inserted some missing tooltip texts
+    Renamed Button "Make Realtime" to "Assign ROA" as it's not only important for realtime anymore, but e.g. for autosaving and group count. And I think it's more descriptive for novice users.
+    Fixed a remaining issue with the new realtime mode
+    Added "Apply Shape key" option - this will allow you to join your objects, keeping the random shape key. With this feature enabled, shape keys work now in the "Single object" mode, too
+    Docs updated (incomplete)
+    Added "Update realtime preview" button and "Maximum realtime count" slider - this is especially useful for working with real copies, but also for the group count, which doesn't yet reliably update, and of course for slower machines
+    Fixed group count not always updating / saving reliably 
+    Fixed error message for some cases operating outside a 3D view
+    Fixed bug of previous upload
+
+ 
+
+Version 0.7.5 release
+
+    Added autoload
+    Fixed incorrect number being "autosaved" beyond 512 objects
+
+ 
+
+Version 0.7.5 beta
+
+    Weightmap support for scale when cloning to target mesh
+    Performance improvement for the realtime preview, now supporting up to 512 objects in realtime mode in Blender 2.76.
+    Some important notes on this:
+    The performance improvement partly comes from the recent viewport update for Blender version 2.76rc1 by the "viewport project". All cudos to those guys!
+    The improvement inside ROA is that now objects being "recycled" for most operations in opposition to previous versions, where objects where always deleted and recreated, each time you adjusted a scale value or anything else.
+    This was due to the fact that it was way more simple to do so and further more that it hardly improved performance to do it otherwise in previous Blender versions. Now with Blender 2.76 the difference is easily noticable - it's not spectacular but it's the thing I've waited for. It's been announced that the "viewport project" will keep improving viewport performance and I strongly suspect that ROA will gain from that again. I as well will continue to work on ROA's realtime speed. Depending on your hardware and the polygon count of the objects, the performance may drop before reaching the 512 objects. Still with the "viewport project" and future improvements in mind I left the limit at 512.
+    Temporary fix for relative offset and picking from group not working correctly with the new realtime mode
+    Fixed "wrong number of objects left when reducing number of objects" in the new realtime mode
+    Another realtime performance update
+    Fixed "hick-up" bug of the previous upload
+    Fixed hard crash when manually deleting children while in realtime mode
+    Added Vertex Group Scale to loading / saving / realtime update trigger
+    Fixed bug "Duplicating an roa master object that has children attaches these children to the duplicate and erases them from the original" (caused by the new recycling method)*
+    Fixed "keep children" not working correctly with the new mode
+    Fixed minor bugs (e.g. error message on removing the addon etc.)
+    Increased floating point precision for all (floating point) inputs
+    The fix marked with * disappeared in the version I uploaded before, not sure how it happened. Re-fixed it
+    Added autosave feature: when enabled all settings and changes will be saved automatically onto the object.
+
+ 
+
+Version 0.7.4
+
+    Initial weightmap support when cloning to a target mesh (density)
+
+ 
+
+Version 0.7.3
+
+    Implemented Cumulate scale
+    Implemented Bounding box for realtime preview, will be updated later for more accuracy
+    Updated user interface
+    Implemented "+/- Range" for "Full Angle" random rotation
+    Fixed bug with preview box & keep children
+    Added "Clone to points" mode when using a target mesh. Make sure you switch to "Points" when working with e.g. a converted curve!
+    Updated "Clone to points" mode with a "Cyclic" option for circle-like targets
+    Updated Loading / Saving routine for the new options
+    Implemented "Cloning to curve" using the curve modifier along with ROA
+    Fixed offset / rotation bug when cloning to points
+
+ 
+
+Version 0.7.2
+
+    Implemented "Fill mesh" mode
+    Improved "Target mesh" performance
+    Added AABB bounding box percentage scale
+    Fixed curves not being cloned as instances
+    Implemented Target type dropdown selection: Single object / Real copies / Instances
+    Code & User interface cleanup started
+    Added long overdue (fixed) seeded random mode
+    Added shape key option
+    Added animation mode
+    Added local offset for target mesh
+
+Version 0.7.1 Stable
+
+    Fixed bug "Curves not being joined using Single object mode"
+    Beta release of the new realtime feature
+    Fixed various small bugs
+    Fixed bug "Fixed Rotation is doubled on first duplicate"
+    Fixed bug "Modifiers not disabled during realtime preview"
+    Fixed issue "Duplicate offset calculated wrong if original object is not at location 0/0/0"
+    Fixed issue "Duplicate offset calculated wrong if original object is not at location 0/0/0 using a Target mesh"
+    Fixed issue "Duplicate rotation calculated wrong if original object is not rotated 0/0/0
+    Fixed issue "Switches don't trigger realtime update"
+    Added fast "Origin based" collision detection mode
+    Added fast "Simplified" collision detection mode
+    Implemented warning message when trying to use "Single object" in the local user perspective
+    Added loading / saving (not yet for all parameters)
+    Fixed bug when using "Single object" together with "Avoid intersections - delete" sometimes doesn't work
+    Fixed bug "Realtime" switch not always triggering the realtime update and issues resulting from that problem
+    Fixed issue using "Realtime" on objects having children deletes those children
+    Fixed issue "Single object" selected slows down realtime preview
+    Fixed issue using "Realtime" on curves is slow
+    Added realtive offset depending on objects random scale (1-dimensional and grid mode only)
+    Fixed bug children getting deleted without using the realtime mode
+    Added "Pick from group" feature
+    Fixed bug Modifiers on a non-group object throw an error
+    Fixed bug Group Instances not working anymore after last update
+    Fixed bug Relative offset axis Y and Z falsely using the X value
+    Fixed bug Reset button working faulty
+
+Version 0.6.4
+
+    Fixed bug "Having multiple layers selected while using ROA the new objects are created on every selected layer"
+
+    Implemented feature: Adjustable AABB collision detection to avoid intersections.
+
+    Fixed couple smaller bugs that came in with the update
+
+    Updated documentation (to be completed)
+
+Version 0.6.3
+
+    Added reset button
+
+    Fixed original object not being selected after applying using the parent option
+
+Version 0.6.2
+
+    Fixed bug "objects other than mesh type being created in maximum draw state box"
+
+    Implemented feature "set parent" requested by user
+
+Version 0.6.1
+
+    Fixed the "Target Mesh" Bug
+
+    Fixed minor Bugs
+
+Version 0.6.0
+
+    Implementation of cloning to a target mesh object (faces).
+
+    Documentation to be updated
+
+Version 0.5.3
+
+    Fixed Group Instances, Lamps etc. not working anymore after last update
+
+Version 0.5.2
+
+    Increased speed Creating up to 5000 objects at once works now flawless and fast Support for modifiers on objects, disabling modifiers is no longer necessary
+
+    Preview of object count and total polygon count (for now in a warning message)
+
+    Support for higher polygon counts (tested for up to 20Mio polygons total)
+
+Version 0.5.1
+
+(initial release)
